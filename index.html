@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Colegio Sagrado Corazón - Portal de Consultas</title>
+    
+    <!-- Tailwind CSS (Framework de estilos) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- NUESTRO ARCHIVO DE ESTILOS PERSONALIZADOS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+    <!-- Contenedor Principal -->
+    <div class="flex-grow flex flex-col max-w-4xl w-full mx-auto p-4 md:p-6 h-screen justify-between">
+        
+        <!-- Encabezado / Header -->
+        <header class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-600 p-2.5 rounded-xl text-white shadow-lg shadow-brand-500/20">
+                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-white">Colegio Sagrado Corazón</h1>
+                    <p class="text-xs text-slate-400">Portal de Consultas Académicas</p>
+                </div>
+            </div>
+            
+            <!-- Botones de Acción (Modo Oscuro / Info) -->
+            <div class="flex items-center gap-2">
+                <button id="theme-toggle" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 transition-colors">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="info-btn" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 transition-colors">
+                    <i data-lucide="info" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Área de Chat -->
+        <div class="flex-grow bg-slate-900/50 border border-slate-800/80 rounded-2xl p-4 overflow-hidden flex flex-col mb-4 backdrop-blur-sm">
+            <!-- Mensajes -->
+            <div id="messages-box" class="flex-1 overflow-y-auto space-y-4 pr-2">
+                <!-- Los mensajes se generan dinámicamente mediante JS -->
+            </div>
+        </div>
+
+        <!-- Barra de Entrada de Datos -->
+        <footer class="border-t border-slate-800 pt-4">
+            <form id="chat-form" class="flex gap-2">
+                <input type="text" id="user-input" placeholder="Escribe tu consulta académica aquí..." class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 text-white placeholder-slate-500 transition-all">
+                <button type="submit" class="bg-brand-600 hover:bg-brand-500 active:scale-95 text-white px-5 py-3 rounded-xl flex items-center justify-center transition-all shadow-lg shadow-brand-600/10">
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                </button>
+            </form>
+            <p class="text-[10px] text-center text-slate-500 mt-2">© 2026 Colegio Sagrado Corazón. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Toast de Notificaciones -->
+    <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 bg-red-600 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 transition-all duration-300 border border-red-500">
+        <i data-lucide="alert-circle" class="w-5 h-5"></i>
+        <span id="toast-message" class="text-xs font-medium">Error</span>
+    </div>
+
+    <div id="success-toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 bg-emerald-600 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 transition-all duration-300 border border-emerald-500">
+        <i data-lucide="check-circle" class="w-5 h-5"></i>
+        <span id="success-toast-message" class="text-xs font-medium">Éxito</span>
+    </div>
+
+    <!-- NUESTRO ARCHIVO DE JAVASCRIPT PERSONALIZADO -->
+    <script src="script.js"></script>
+</body>
+</html>

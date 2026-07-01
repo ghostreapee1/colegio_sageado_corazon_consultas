@@ -1,0 +1,25 @@
+/* --- Estilos Personalizados para el Portal Académico --- */
+
+/* Personalización de la barra de desplazamiento (Scrollbar) */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563; /* Gris oscuro para el modo oscuro */
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280; /* Gris más claro al pasar el mouse */
+}
+
+/* Transiciones suaves globales para el modo claro/oscuro */
+body, header, div, input, button {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
