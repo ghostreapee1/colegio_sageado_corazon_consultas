@@ -1,1 +1,1 @@
-# colegio_sageado_corazon_consultas
+# colegio_sagrado_corazon_consultas
